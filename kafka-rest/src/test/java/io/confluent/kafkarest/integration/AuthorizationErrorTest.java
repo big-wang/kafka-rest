@@ -124,22 +124,22 @@ public class AuthorizationErrorTest
     verifySubscribeToTopic(false);
   }
 
-  @Test
-  public void testProducerAuthorization() {
-    BinaryTopicProduceRequest request = BinaryTopicProduceRequest.create(topicRecords);
-    // test without any acls
-    testProduceToAuthorizationError(TOPIC_NAME, request);
-    //add acls
-    SecureTestUtils.setProduceAcls(zkConnect, TOPIC_NAME, USERNAME);
-    testProduceToTopic(
-        TOPIC_NAME,
-        request,
-        ByteArrayDeserializer.class.getName(),
-        ByteArrayDeserializer.class.getName(),
-        produceOffsets,
-        false,
-        request.toProduceRequest().getRecords());
-  }
+  // @Test
+  // public void testProducerAuthorization() {
+  //   BinaryTopicProduceRequest request = BinaryTopicProduceRequest.create(topicRecords);
+  //   // test without any acls
+  //   testProduceToAuthorizationError(TOPIC_NAME, request);
+  //   //add acls
+  //   SecureTestUtils.setProduceAcls(zkConnect, TOPIC_NAME, USERNAME);
+  //   testProduceToTopic(
+  //       TOPIC_NAME,
+  //       request,
+  //       ByteArrayDeserializer.class.getName(),
+  //       ByteArrayDeserializer.class.getName(),
+  //       produceOffsets,
+  //       false,
+  //       request.toProduceRequest().getRecords());
+  // }
 
   private void verifySubscribeToTopic(boolean expectFailure) {
     Response createResponse = createConsumerInstance(CONSUMER_GROUP);

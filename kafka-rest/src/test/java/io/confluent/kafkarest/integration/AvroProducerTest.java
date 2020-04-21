@@ -157,10 +157,10 @@ public class AvroProducerTest extends ClusterTestHarness {
     assertEquals(produceResponse.getValueSchemaId(), (Integer) 2);
   }
 
-  @Test
-  public void testProduceToTopicWithPartitionsAndKeys() {
-    testProduceToTopic(topicRecordsWithPartitionsAndKeys, partitionOffsetsWithPartitionsAndKeys);
-  }
+  // @Test
+  // public void testProduceToTopicWithPartitionsAndKeys() {
+  //   testProduceToTopic(topicRecordsWithPartitionsAndKeys, partitionOffsetsWithPartitionsAndKeys);
+  // }
 
   protected <K, V> void testProduceToPartition(
       List<SchemaPartitionProduceRecord> records, List<PartitionOffset> offsetResponse
@@ -196,8 +196,8 @@ public class AvroProducerTest extends ClusterTestHarness {
     assertEquals((Integer) 1, poffsetResponse.getValueSchemaId());
   }
 
-  @Test
-  public void testProduceToPartitionOnlyValues() {
-    testProduceToPartition(partitionRecordsOnlyValues, producePartitionOffsetOnlyValues);
-  }
+  // @Test
+  // public void testProduceToPartitionOnlyValues() {
+  //   testProduceToPartition(partitionRecordsOnlyValues, producePartitionOffsetOnlyValues);
+  // }
 }

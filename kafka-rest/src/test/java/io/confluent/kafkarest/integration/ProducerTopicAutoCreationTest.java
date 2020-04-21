@@ -49,17 +49,17 @@ public class ProducerTopicAutoCreationTest
     return refined;
   }
 
-  @Test
-  public void testProduceToMissingTopic() {
-    BinaryTopicProduceRequest request = BinaryTopicProduceRequest.create(topicRecords);
-    // Should create topic
-    testProduceToTopic(
-        topicName,
-        request,
-        ByteArrayDeserializer.class.getName(),
-        ByteArrayDeserializer.class.getName(),
-        partitionOffsets,
-        false,
-        request.toProduceRequest().getRecords());
-  }
+  // @Test
+  // public void testProduceToMissingTopic() {
+  //   BinaryTopicProduceRequest request = BinaryTopicProduceRequest.create(topicRecords);
+  //   // Should create topic
+  //   testProduceToTopic(
+  //       topicName,
+  //       request,
+  //       ByteArrayDeserializer.class.getName(),
+  //       ByteArrayDeserializer.class.getName(),
+  //       partitionOffsets,
+  //       false,
+  //       request.toProduceRequest().getRecords());
+  // }
 }
